@@ -89,9 +89,10 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 ## Activos (staged en `public/assets/`)
 
-- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg` (re-coloreado a oscuro),
-  `kira/emblem.png` (emblema transparente, sin fondo; "KIRA AI" es texto HTML),
-  `kira/workflow-n8n.png` (flujo n8n), `isp/informe-rendimiento.png`, `isp/desempeno-cuadrillas.png`.
+- **En uso:** `home/portrait.jpg`, `retail/flujo-etl.svg` (diagrama del flujo ETL, humano + IA),
+  `kira/emblem.png` (emblema transparente; "KIRA AI" es texto HTML),
+  `kira/workflow-n8n.png` (flujo n8n, captura 2026-05-31), `isp/informe-rendimiento.png`,
+  `isp/desempeno-cuadrillas.png`.
 - **Difuminado aplicado (a pedido del humano):** en los dashboards de SONET se tapó la marca
   "LIVING net" y los nombres de contratistas (SONET, FINETIC, Hermano Miguel, Ricaurte,
   Totoracocha). Las métricas quedan visibles en la foto (no se mencionan en el texto).
