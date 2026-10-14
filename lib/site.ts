@@ -10,16 +10,12 @@ export const SITE = {
 
 export const MAILTO = `mailto:${SITE.email}`;
 
+/** Anclas de la pagina unica. Sin CTA en la barra. */
 export const NAV_LINKS = [
+  { label: "Perfil", href: "/#perfil" },
+  { label: "Stack", href: "/#stack" },
   { label: "Casos", href: "/#casos" },
-  { label: "KIRA", href: "/automatizaciones/kira" },
-  { label: "Sobre mí", href: "/sobre-mi" },
+  { label: "Contacto", href: "/#contacto" },
 ] as const;
 
-export const FOOTER_CASES = [
-  { label: "Caso ISP / SONET", href: "/casos/isp" },
-  { label: "Caso GNSS RTK", href: "/casos/gnss-rtk" },
-  { label: "Retail Cuenca", href: "/casos/retail-cuenca" },
-  { label: "KIRA AI", href: "/automatizaciones/kira" },
-  { label: "Sobre mí", href: "/sobre-mi" },
-] as const;
+export const FOOTER_LINKS = NAV_LINKS;

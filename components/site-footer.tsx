@@ -1,38 +1,29 @@
-import Link from "next/link";
-import { FOOTER_CASES, MAILTO, SITE } from "@/lib/site";
+import { FOOTER_LINKS, MAILTO, SITE } from "@/lib/site";
 import { Container } from "@/components/ui";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border">
-      <Container className="py-12 md:py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
-          <div className="md:col-span-5">
+      <Container className="py-10 md:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+          <div className="md:col-span-6">
             <p className="t-h4">{SITE.name}</p>
-            <p className="t-body-sm text-ink-muted mt-3 max-w-[36ch]">
+            <p className="t-body-sm text-ink-muted mt-2 max-w-[36ch]">
               {SITE.title}
             </p>
           </div>
 
-          <nav aria-label="Navegación del pie" className="md:col-span-4">
-            <p className="t-label text-ink-muted">Navegación</p>
-            <ul className="mt-4 space-y-2.5">
-              <li>
-                <Link
-                  href="/"
-                  className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-accent"
-                >
-                  Home
-                </Link>
-              </li>
-              {FOOTER_CASES.map((item) => (
+          <nav aria-label="Navegación del pie" className="md:col-span-3">
+            <p className="t-label text-ink-muted">Secciones</p>
+            <ul className="mt-3 space-y-2">
+              {FOOTER_LINKS.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <a
                     href={item.href}
                     className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-accent"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -40,7 +31,7 @@ export function SiteFooter() {
 
           <div className="md:col-span-3">
             <p className="t-label text-ink-muted">Contacto</p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3 space-y-2">
               <li>
                 <a
                   href={MAILTO}
@@ -68,8 +59,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <hr className="mt-12 border-0 border-t border-border md:mt-16" />
-        <p className="t-caption text-ink-muted mt-6">
+        <hr className="mt-10 border-0 border-t border-border" />
+        <p className="t-caption text-ink-muted mt-5">
           © 2026 Stalyn Flores Lalvay
         </p>
       </Container>

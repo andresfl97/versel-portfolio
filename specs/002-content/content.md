@@ -187,36 +187,20 @@ Nota de sincronización: `docs/ASSETS.md` todavía lista `public/assets/retail/p
 
 ---
 
-## 4. Fundamentos SQL (pieza breve)
+## 4. Stack tecnológico
 
-**Qué es**
+Herramientas que uso, con su icono de marca real (nombre como respaldo):
 
-Una pieza corta de competencias, no un caso de estudio largo. Reúne las prácticas de SQL que
-sostienen cualquier análisis: consultar, cruzar y resumir datos con criterio.
-
-**Competencias**
-
-- **Joins y anti joins.** Combinar tablas por clave y detectar lo que falta con anti joins.
-- **Set operators.** Uniones, intersecciones y diferencias entre conjuntos de resultados.
-- **Funciones de cadena, fecha y nulos.** Normalizar texto, manejar fechas y tratar nulos con
-  criterio, sin forzar resultados.
-- **`CASE WHEN`.** Clasificar y derivar columnas según reglas de negocio.
-- **Window functions.** Agregados por ventana, ranking y percentiles sin colapsar las filas.
-
-**Datos**
-
-Prácticas sobre bases de datos sintéticas (`RetailPractice` y `SaaSPractice`) en SQL Server.
-Datos ficticios, sin credenciales ni datos de producción. Se usa para demostrar la técnica, no
-para reportar resultados de negocio.
+- **Datos y consultas:** SQL Server, PostgreSQL, MySQL, Python, pandas.
+- **BI y visualización:** Power BI (DAX), Looker Studio, Google Sheets, Excel (tablas dinámicas,
+  Power Query).
+- **Automatización e IA:** n8n, agentes de IA (Claude/Anthropic, DeepSeek, Copilot, Gemini),
+  orquestación de sub-agentes en procesos ETL.
+- **Desarrollo:** Git, GitHub, Jupyter, JavaScript.
 
 **Estado**
 
-Completo. Pieza de ejercicios, declarada como tal.
-
-**Imágenes requeridas**
-
-Ninguna. Se resuelve con artefactos de dato: SQL resaltado y micro-gráficas construidas en la
-maquetación.
+Vigente. Reemplaza a la antigua pieza de Fundamentos SQL (retirada por decisión del humano).
 
 ---
 
@@ -379,6 +363,8 @@ desarrollo agentes de IA a nivel de orquestación para automatizar procesos ETL.
 - Meta Data Analyst Professional Certificate (Coursera, May 2026).
 - Power BI Intermedio y Excel Avanzado (Soluciones Integrales Expertos, May 2026).
 - Build Intelligent Agents Using DeepSeek & N8N (Coursera, Mar 2026).
+- Claude Code in Action (Anthropic).
+- Iniciación al Desarrollo con IA (BIG school).
 
 **Disponibilidad**
 

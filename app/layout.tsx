@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { geist, geistMono } from "@/app/fonts";
-import { ThemeSetter } from "@/components/theme-setter";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE } from "@/lib/site";
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Base clara; KIRA sobrescribe con el fondo oscuro en su propio viewport.
+// Pagina unica en tema claro (tokens.md). Sin ruta oscura.
 export const viewport: Viewport = {
   themeColor: "#F4F5F2",
   colorScheme: "light",
@@ -43,17 +42,9 @@ export default function RootLayout({
     <html
       lang="es"
       data-theme="light"
-      suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-[100dvh] bg-bg text-ink antialiased">
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var p=window.location.pathname;document.documentElement.dataset.theme=p.indexOf('/automatizaciones/kira')===0?'dark':'light';}catch(e){}})();",
-          }}
-        />
-        <ThemeSetter />
         <a
           href="#contenido"
           className="t-body-sm sr-only rounded-[var(--radius-sm)] bg-accent px-4 py-2 text-accent-ink focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100]"
