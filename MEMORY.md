@@ -4,11 +4,12 @@ Estado operativo compacto del proyecto VerselPortfolio. No es un log de activida
 
 ## Estado actual
 
-- **Fase:** 007-deploy (repo publicado; falta conectar Vercel).
+- **Fase:** COMPLETO. Sitio en producción.
 - **Método:** Spec-Driven Development con Human Gates.
-- **App construida:** Next.js 16.4 (Turbopack), 7 rutas + 404, `build` y `lint` en verde.
+- **En vivo:** https://versel-portfolio-sigma.vercel.app
 - **Repositorio:** https://github.com/andresfl97/versel-portfolio (público, rama `main`).
-  Autor de commits: noreply de GitHub (el email real está privado en su cuenta).
+  Vercel lo auto-despliega al hacer push. Autor de commits: noreply de GitHub (su email real
+  está privado en su cuenta).
 
 ## Gates humanos
 
@@ -19,8 +20,20 @@ HG 003 - Sistema de diseño:                 APPROVED (tokens.md)
 HG 004 - Specs de página:                   APPROVED (tema: todo claro)
 HG 005 - Implementación:                    DONE (build + lint verde)
 HG 006 - QA:                                CORREGIDO (1 crítico + 9 avisos cerrados)
-HG 007 - Deploy en Vercel:                  PENDING (esperando OK)
+HG 007 - Deploy en Vercel:                  LIVE (versel-portfolio-sigma.vercel.app)
 ```
+
+## Verificación en vivo (2026-10-13)
+
+- 6 rutas `200`; `/noexiste` `404`. Título y `theme-color` correctos (claro; oscuro en KIRA).
+- 1 `<h1>` por página; 0 `<img>` sin `alt`; 0 em-dashes en el HTML.
+- Assets crudos e imágenes optimizadas (`next/image`) responden `200`.
+- Favicon de marca (`app/icon.svg`) agregado y en vivo.
+
+## Pendiente / opcional (no bloquea)
+
+- `og:image` (imagen al compartir el link): decidido omitir por el humano.
+- Dominio propio (ej. `stalynflores.com`): disponible en 2 clics cuando quiera.
 
 ## QA (006) — resultado
 
