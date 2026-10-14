@@ -89,10 +89,13 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 ## Activos (staged en `public/assets/`)
 
-- **En uso:** `home/portrait.jpg` (foto de perfil) y `retail/orquestacion-ia.svg`.
-- **Guardados sin usar** (el usuario traerá imágenes mejores, las actuales se ven feas):
-  `isp/pipeline.png`, `isp/informe-general.png`, `isp/encuesta.png`,
-  `kira/workflow-n8n.png`, `kira/chatbot-flujo.png`, `kira/kira-ai.png`.
+- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg`, `kira/logo.jpg` (logo del cliente
+  Delicias Doña Mary, 640x640, 76 KB) y `kira/workflow-n8n.png` (flujo n8n).
+- **EN PAUSA (no publicar sin decisión):** `isp/cuadrillas.png` y `isp/rendimiento.png` muestran la
+  marca del ISP ("LIVING net"), nombres reales (SONET, FINETIC, Hermano Miguel, Ricaurte,
+  Totoracocha) y las métricas que el humano pidió retirar (inactividad / no saben / no usan).
+- **Guardados sin usar:** `isp/pipeline.png`, `isp/informe-general.png`, `isp/encuesta.png`,
+  `kira/chatbot-flujo.png`, `kira/kira-ai.png`.
 
 ## Restricciones
 
@@ -102,4 +105,12 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 ## Pendiente de entrada del usuario
 
-- Nada bloqueante. Capturas de Retail Cuenca, si algún día se retoma el caso.
+- **Imágenes de SONET**: contienen datos sin anonimizar (marca del ISP y nombres reales) y las
+  métricas retiradas. Opciones: sanear (recorte/blur, usar solo métricas fuertes), usar tal cual,
+  o no usarlas. **No publicadas todavía.**
+- **Nombre del negocio en KIRA**: el logo (ya publicado) muestra "Delicias Doña Mary", mientras el
+  copy dice "una microempresa". Confirmar si se nombra o se mantiene genérico.
+
+## Enlaces en el sitio
+
+- Sección Stack: enlace "Ver el código en GitHub" → https://github.com/andresfl97/versel-portfolio.
