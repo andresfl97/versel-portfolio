@@ -32,7 +32,7 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 - **Stack tecnológico** con 18 iconos de marca (simple-icons + 3 trazos locales para SQL Server,
   Power BI y Excel, retirados de v16). Reemplaza a Fundamentos SQL.
 - CTA "Escríbeme" solo 2 veces (perfil + contacto). Certificaciones: 6 (incluye Anthropic y
-  BIG school). Sin galerías de evidencia (imágenes feas retiradas; el usuario traerá mejores).
+  BIG school). Evidencia real en SONET (2 dashboards) y KIRA (logo central + flujo n8n).
 
 ## Verificación en vivo (rediseño 008)
 
@@ -89,13 +89,13 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 ## Activos (staged en `public/assets/`)
 
-- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg`, `kira/logo.jpg` (logo del cliente
-  Delicias Doña Mary, 640x640, 76 KB) y `kira/workflow-n8n.png` (flujo n8n).
-- **EN PAUSA (no publicar sin decisión):** `isp/cuadrillas.png` y `isp/rendimiento.png` muestran la
-  marca del ISP ("LIVING net"), nombres reales (SONET, FINETIC, Hermano Miguel, Ricaurte,
-  Totoracocha) y las métricas que el humano pidió retirar (inactividad / no saben / no usan).
-- **Guardados sin usar:** `isp/pipeline.png`, `isp/informe-general.png`, `isp/encuesta.png`,
-  `kira/chatbot-flujo.png`, `kira/kira-ai.png`.
+- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg`, `kira/logo.jpg` (logo KIRA AI),
+  `kira/workflow-n8n.png` (flujo n8n), `isp/informe-rendimiento.png`, `isp/desempeno-cuadrillas.png`.
+- **PENDIENTE DE REVISIÓN HUMANA (publicado a su pedido):** los dos dashboards de SONET exponen:
+  - la marca **"LIVING net"** (arriba a la derecha);
+  - nombres reales de contratistas (SONET, FINETIC, Hermano Miguel, Ricaurte, Totoracocha);
+  - la métrica **"inactividad (no saben / no usan) 90.74% / 87.04%"**, que el humano pidió retirar.
+  Opciones ofrecidas: difuminar esos elementos o cambiar las imágenes.
 
 ## Restricciones
 
