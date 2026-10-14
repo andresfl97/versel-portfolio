@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import {
   Button,
+  EvidenceFigure,
   Figure,
   Section,
   StatusTag,
@@ -275,6 +276,26 @@ export default function HomePage() {
                   text: "Brecha de desinformación del 10%, causa raíz de las quejas nocturnas.",
                 },
               ]}
+              image={
+                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+                  <EvidenceFigure
+                    src="/assets/isp/informe-rendimiento.png"
+                    width={1800}
+                    height={1351}
+                    alt="Dashboard del Informe de Rendimiento SONET con CSAT, tiempo de espera y valoración del trato"
+                    sizes="(max-width: 768px) 100vw, 42vw"
+                    caption="Informe de Rendimiento SONET: satisfacción del usuario y tiempos de atención."
+                  />
+                  <EvidenceFigure
+                    src="/assets/isp/desempeno-cuadrillas.png"
+                    width={1800}
+                    height={1351}
+                    alt="Dashboard del Análisis de desempeño de cuadrillas"
+                    sizes="(max-width: 768px) 100vw, 42vw"
+                    caption="Análisis de desempeño de cuadrillas: métricas operativas por equipo."
+                  />
+                </div>
+              }
             />
           </Reveal>
 
@@ -357,14 +378,27 @@ export default function HomePage() {
           <h2 className="t-h2">Automatizaciones</h2>
         </Reveal>
 
-        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
-          <Reveal className="lg:col-span-5">
+        <div className="mt-8 flex flex-col items-center">
+          <Reveal>
+            <EvidenceFigure
+              src="/assets/kira/logo.jpg"
+              width={593}
+              height={763}
+              alt="Logotipo de KIRA AI, agente de WhatsApp con IA"
+              sizes="(max-width: 640px) 240px, 288px"
+              radius="lg"
+              className="w-[240px] sm:w-[288px]"
+              caption="Identidad visual de KIRA AI."
+            />
+          </Reveal>
+
+          <Reveal delay={0.08} className="mt-7 w-full max-w-[58ch]">
             <div className="flex flex-wrap items-center gap-3">
               <h3 className="t-h3 text-ink">KIRA AI</h3>
               <StatusTag tone="neutral">Etapa 4 de 6</StatusTag>
               <StepDots current={4} total={6} />
             </div>
-            <p className="t-body text-ink-muted mt-3 max-w-[46ch] text-pretty">
+            <p className="t-body text-ink-muted mt-3 text-pretty">
               Un agente de WhatsApp que convierte las conversaciones y
               operaciones de una microempresa en datos consultables.
             </p>
@@ -376,40 +410,18 @@ export default function HomePage() {
               ))}
             </ul>
           </Reveal>
-
-          <Reveal delay={0.08} className="lg:col-span-7">
-            <figure className="mx-auto w-full max-w-[400px] sm:max-w-[460px]">
-              <div className="relative aspect-square w-full overflow-hidden rounded-[var(--radius-lg)] border border-border bg-bg-elevated">
-                <Image
-                  src="/assets/kira/logo.jpg"
-                  alt="Logotipo de KIRA AI, agente de WhatsApp con IA"
-                  fill
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                  className="object-contain p-8"
-                />
-              </div>
-              <figcaption className="t-caption text-ink-muted mt-3">
-                Identidad visual de KIRA AI.
-              </figcaption>
-            </figure>
-          </Reveal>
         </div>
 
         <Reveal>
-          <figure className="mt-8 w-full max-w-[760px]">
-            <div className="relative aspect-[5.4/1] w-full overflow-hidden rounded-[var(--radius-md)] border border-border bg-bg-elevated px-4 py-4 max-md:aspect-video">
-              <Image
-                src="/assets/kira/workflow-n8n.png"
-                alt="Flujo de trabajo del agente KIRA AI en n8n"
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-contain"
-              />
-            </div>
-            <figcaption className="t-caption text-ink-muted mt-3">
-              Flujo de trabajo del agente KIRA AI en n8n.
-            </figcaption>
-          </figure>
+          <EvidenceFigure
+            src="/assets/kira/workflow-n8n.png"
+            width={2400}
+            height={448}
+            alt="Flujo de trabajo del agente KIRA AI en n8n"
+            sizes="(max-width: 768px) 100vw, 54vw"
+            className="mx-auto mt-8 w-full max-w-[760px]"
+            caption="Flujo de trabajo del agente KIRA AI en n8n."
+          />
         </Reveal>
       </Section>
 
