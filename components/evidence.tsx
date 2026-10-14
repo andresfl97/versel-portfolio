@@ -139,7 +139,7 @@ export function EvidenceGallery({
             transition={reduce ? { duration: 0 } : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
-              className="absolute inset-0 bg-ink/75 backdrop-blur-sm"
+              className="absolute inset-0 bg-scrim backdrop-blur-sm"
               onClick={close}
               aria-hidden="true"
             />
@@ -171,7 +171,7 @@ export function EvidenceGallery({
                 sizes="90vw"
                 className="mx-auto block h-auto max-h-[80dvh] w-auto max-w-full rounded-[var(--radius-md)] object-contain shadow-md"
               />
-              <p className="t-caption mt-3 max-w-[70ch] text-center text-bg">
+              <p className="t-caption mt-3 max-w-[70ch] text-center text-ink">
                 {item.caption}
               </p>
             </motion.div>

@@ -1,70 +1,70 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cómo se construye este caso con orquestación de agentes de IA y aprobación humana en cada etapa">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9CA3AF"/>
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9AA39F"/>
     </marker>
   </defs>
 
-  <rect width="1600" height="900" fill="#FAFAF8"/>
+  <rect width="1600" height="900" fill="#0F1413"/>
 
-  <text x="80" y="108" font-family="Geist, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="52" font-weight="600" fill="#141414" letter-spacing="-1.2">Orquestación con IA</text>
-  <text x="80" y="146" font-family="Geist, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#6B7280">Cómo se construye este caso: agentes que ejecutan y un humano que aprueba en cada etapa.</text>
+  <text x="80" y="108" font-family="Geist, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="52" font-weight="600" fill="#ECEEEA" letter-spacing="-1.2">Orquestación con IA</text>
+  <text x="80" y="146" font-family="Geist, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#9AA39F">Cómo se construye este caso: agentes que ejecutan y un humano que aprueba en cada etapa.</text>
 
-  <rect x="1170" y="72" width="350" height="38" rx="19" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.25"/>
-  <text x="1345" y="97" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="14" fill="#0E7C66">Retail Cuenca · en desarrollo</text>
+  <rect x="1170" y="72" width="350" height="38" rx="19" fill="#122A24" stroke="#35C29B" stroke-opacity="0.25"/>
+  <text x="1345" y="97" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="14" fill="#35C29B">Retail Cuenca · en desarrollo</text>
 
-  <line x1="80" y1="190" x2="1520" y2="190" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="80" y1="190" x2="1520" y2="190" stroke="#28302E" stroke-width="1"/>
 
   <!-- Arrows -->
-  <line x1="330" y1="332" x2="374" y2="332" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="626" y1="332" x2="670" y2="332" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="922" y1="332" x2="966" y2="332" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="1218" y1="332" x2="1262" y2="332" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="330" y1="332" x2="374" y2="332" stroke="#9AA39F" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="626" y1="332" x2="670" y2="332" stroke="#9AA39F" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="922" y1="332" x2="966" y2="332" stroke="#9AA39F" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1218" y1="332" x2="1262" y2="332" stroke="#9AA39F" stroke-width="2" marker-end="url(#arrow)"/>
 
   <!-- Stage 1 -->
-  <rect x="80" y="248" width="248" height="168" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="104" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#0E7C66">CONTENT</text>
-  <text x="104" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#141414">Contenido</text>
-  <text x="104" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#6B7280">content-curator</text>
-  <rect x="149" y="452" width="110" height="34" rx="17" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.3"/>
-  <text x="204" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#0E7C66">HG 002</text>
+  <rect x="80" y="248" width="248" height="168" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="104" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#35C29B">CONTENT</text>
+  <text x="104" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#ECEEEA">Contenido</text>
+  <text x="104" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#9AA39F">content-curator</text>
+  <rect x="149" y="452" width="110" height="34" rx="17" fill="#122A24" stroke="#35C29B" stroke-opacity="0.3"/>
+  <text x="204" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#35C29B">HG 002</text>
 
   <!-- Stage 2 -->
-  <rect x="376" y="248" width="248" height="168" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="400" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#0E7C66">DESIGN</text>
-  <text x="400" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#141414">Diseño</text>
-  <text x="400" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#6B7280">design-director</text>
-  <rect x="415" y="452" width="170" height="34" rx="17" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.3"/>
-  <text x="500" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#0E7C66">HG 003 / 004</text>
+  <rect x="376" y="248" width="248" height="168" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="400" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#35C29B">DESIGN</text>
+  <text x="400" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#ECEEEA">Diseño</text>
+  <text x="400" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#9AA39F">design-director</text>
+  <rect x="415" y="452" width="170" height="34" rx="17" fill="#122A24" stroke="#35C29B" stroke-opacity="0.3"/>
+  <text x="500" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#35C29B">HG 003 / 004</text>
 
   <!-- Stage 3 -->
-  <rect x="672" y="248" width="248" height="168" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="696" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#0E7C66">BUILD</text>
-  <text x="696" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#141414">Implementación</text>
-  <text x="696" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#6B7280">frontend-builder</text>
-  <rect x="741" y="452" width="110" height="34" rx="17" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.3"/>
-  <text x="796" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#0E7C66">HG 005</text>
+  <rect x="672" y="248" width="248" height="168" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="696" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#35C29B">BUILD</text>
+  <text x="696" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#ECEEEA">Implementación</text>
+  <text x="696" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#9AA39F">frontend-builder</text>
+  <rect x="741" y="452" width="110" height="34" rx="17" fill="#122A24" stroke="#35C29B" stroke-opacity="0.3"/>
+  <text x="796" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#35C29B">HG 005</text>
 
   <!-- Stage 4 -->
-  <rect x="968" y="248" width="248" height="168" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="992" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#0E7C66">QA</text>
-  <text x="992" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#141414">Calidad</text>
-  <text x="992" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#6B7280">qa-reviewer</text>
-  <rect x="1037" y="452" width="110" height="34" rx="17" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.3"/>
-  <text x="1092" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#0E7C66">HG 006</text>
+  <rect x="968" y="248" width="248" height="168" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="992" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#35C29B">QA</text>
+  <text x="992" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#ECEEEA">Calidad</text>
+  <text x="992" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#9AA39F">qa-reviewer</text>
+  <rect x="1037" y="452" width="110" height="34" rx="17" fill="#122A24" stroke="#35C29B" stroke-opacity="0.3"/>
+  <text x="1092" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#35C29B">HG 006</text>
 
   <!-- Stage 5 -->
-  <rect x="1264" y="248" width="248" height="168" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="1288" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#0E7C66">DEPLOY</text>
-  <text x="1288" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#141414">Despliegue</text>
-  <text x="1288" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#6B7280">deploy-ops</text>
-  <rect x="1333" y="452" width="110" height="34" rx="17" fill="#EAF3F1" stroke="#0E7C66" stroke-opacity="0.3"/>
-  <text x="1388" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#0E7C66">HG 007</text>
+  <rect x="1264" y="248" width="248" height="168" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="1288" y="292" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#35C29B">DEPLOY</text>
+  <text x="1288" y="340" font-family="Geist, system-ui, sans-serif" font-size="27" font-weight="600" fill="#ECEEEA">Despliegue</text>
+  <text x="1288" y="380" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#9AA39F">deploy-ops</text>
+  <rect x="1333" y="452" width="110" height="34" rx="17" fill="#122A24" stroke="#35C29B" stroke-opacity="0.3"/>
+  <text x="1388" y="474" text-anchor="middle" font-family="'Geist Mono', ui-monospace, monospace" font-size="13" fill="#35C29B">HG 007</text>
 
-  <text x="80" y="580" font-family="Geist, system-ui, sans-serif" font-size="17" fill="#6B7280">El agente principal (portfolio-master) orquesta y delega. No redacta, no diseña ni implementa.</text>
+  <text x="80" y="580" font-family="Geist, system-ui, sans-serif" font-size="17" fill="#9AA39F">El agente principal (portfolio-master) orquesta y delega. No redacta, no diseña ni implementa.</text>
 
-  <rect x="80" y="620" width="1440" height="150" rx="12" fill="#F5F6F5" stroke="#E5E7EB"/>
-  <text x="112" y="668" font-family="'Geist Mono', ui-monospace, monospace" font-size="14" letter-spacing="1.5" fill="#0E7C66">CICLO DE TRABAJO DEL AGENTE</text>
-  <text x="112" y="712" font-family="'Geist Mono', ui-monospace, monospace" font-size="17" fill="#141414">LEER MEMORY.md  →  AUDITAR  →  EJECUTAR  →  VALIDAR  →  ACTUALIZAR MEMORY.md  →  REPORTAR</text>
-  <text x="112" y="746" font-family="Geist, system-ui, sans-serif" font-size="15" fill="#6B7280">Se ejecuta antes y después de cada tarea. Ninguna etapa avanza sin aprobación humana.</text>
+  <rect x="80" y="620" width="1440" height="150" rx="12" fill="#161B1A" stroke="#28302E"/>
+  <text x="112" y="668" font-family="'Geist Mono', ui-monospace, monospace" font-size="14" letter-spacing="1.5" fill="#35C29B">CICLO DE TRABAJO DEL AGENTE</text>
+  <text x="112" y="712" font-family="'Geist Mono', ui-monospace, monospace" font-size="17" fill="#ECEEEA">LEER MEMORY.md  →  AUDITAR  →  EJECUTAR  →  VALIDAR  →  ACTUALIZAR MEMORY.md  →  REPORTAR</text>
+  <text x="112" y="746" font-family="Geist, system-ui, sans-serif" font-size="15" fill="#9AA39F">Se ejecuta antes y después de cada tarea. Ninguna etapa avanza sin aprobación humana.</text>
 </svg>

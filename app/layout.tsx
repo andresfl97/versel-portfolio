@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Pagina unica en tema claro (tokens.md). Sin ruta oscura.
+// Tema unico oscuro (tokens.md).
 export const viewport: Viewport = {
-  themeColor: "#F4F5F2",
-  colorScheme: "light",
+  themeColor: "#0F1413",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      data-theme="light"
+      data-theme="dark"
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-[100dvh] bg-bg text-ink antialiased">

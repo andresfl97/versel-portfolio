@@ -22,6 +22,9 @@
   --shadow-elevated-md: 0 2px 4px rgba(18, 24, 22, 0.05),
     0 10px 28px rgba(18, 24, 22, 0.07);
 
+  /* Scrim del lightbox: tintado oscuro, sin negro puro. */
+  --scrim: rgba(4, 8, 7, 0.82);
+
   /* Ritmo compacto de portafolio (008): py-8 movil, py-14 desktop. */
   --space-section: clamp(2rem, 5vw, 3.5rem);
 }
@@ -41,9 +44,10 @@
   --accent-ink: #0b1512;
   --focus: #35c29b;
 
-  /* Oscuro sin sombras: la elevacion es superficie + borde. */
-  --shadow-elevated-sm: none;
-  --shadow-elevated-md: none;
+  /* Tema oscuro unico: la elevacion suma una sombra tenida (no negro duro). */
+  --shadow-elevated-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-elevated-md: 0 2px 6px rgba(0, 0, 0, 0.45),
+    0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 @theme inline {
@@ -59,6 +63,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
   --color-focus: var(--focus);
+  --color-scrim: var(--scrim);
 
   /* Tipografia */
   --font-display: var(--font-geist);
@@ -180,35 +185,35 @@
   }
   .t-h4 {
     font-family: var(--font-display);
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     line-height: 1.35;
   }
   .t-lead {
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 1.6;
   }
   .t-body {
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 1.65;
   }
   .t-body-sm {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 1.6;
   }
   .t-caption {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 0.005em;
     line-height: 1.45;
@@ -237,14 +242,14 @@
   }
   .t-figure-sm {
     font-family: var(--font-mono);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 1.3;
   }
   .t-code {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 450;
     letter-spacing: 0;
     line-height: 1.6;

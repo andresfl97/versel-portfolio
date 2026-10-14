@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import {
   Button,
-  EvidenceFigure,
   Figure,
   Section,
   StatusTag,
@@ -382,56 +381,52 @@ export default function HomePage() {
           <h2 className="t-h2">Automatizaciones</h2>
         </Reveal>
 
-        <div className="mt-8 flex flex-col items-center">
-          <Reveal>
-            <EvidenceFigure
-              src="/assets/kira/logo.jpg"
-              width={593}
-              height={763}
-              alt="Logotipo de KIRA AI, agente de WhatsApp con IA"
-              sizes="(max-width: 640px) 240px, 288px"
-              radius="lg"
-              className="w-[240px] sm:w-[288px]"
-              caption="Identidad visual de KIRA AI."
+        <Reveal>
+          <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+            <Image
+              src="/assets/kira/emblem.png"
+              alt="Emblema de KIRA AI, agente de WhatsApp con IA"
+              width={420}
+              height={455}
+              sizes="(max-width: 640px) 150px, 176px"
+              className="h-auto w-[150px] shrink-0 sm:w-[176px]"
             />
-          </Reveal>
-
-          <Reveal delay={0.08} className="mt-7 w-full max-w-[58ch]">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="max-w-[70ch]">
               <h3 className="t-h3 text-ink">KIRA AI</h3>
-              <StatusTag tone="neutral">Etapa 4 de 6</StatusTag>
-              <StepDots current={4} total={6} />
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                <StatusTag tone="neutral">Etapa 4 de 6</StatusTag>
+                <StepDots current={4} total={6} />
+              </div>
+              <p className="t-body text-ink-muted mt-3 text-pretty">
+                Un agente de WhatsApp que convierte las conversaciones y
+                operaciones de una microempresa en datos consultables.
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {["n8n", "PostgreSQL", "JavaScript", "pgvector"].map((item) => (
+                  <li key={item}>
+                    <Chip>{item}</Chip>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="t-body text-ink-muted mt-3 text-pretty">
-              Un agente de WhatsApp que convierte las conversaciones y
-              operaciones de una microempresa en datos consultables.
-            </p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {["n8n", "PostgreSQL", "JavaScript", "pgvector"].map((item) => (
-                <li key={item}>
-                  <Chip>{item}</Chip>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
 
         <Reveal>
-          <div className="mt-8 flex justify-center">
-            <EvidenceGallery
-              items={[
-                {
-                  src: "/assets/kira/workflow-n8n.png",
-                  width: 2400,
-                  height: 448,
-                  alt: "Flujo de trabajo del agente KIRA AI en n8n",
-                  caption: "Flujo de trabajo del agente KIRA AI en n8n.",
-                  sizes: "300px",
-                  thumbClassName: "w-[240px] sm:w-[300px]",
-                },
-              ]}
-            />
-          </div>
+          <EvidenceGallery
+            className="mt-6"
+            items={[
+              {
+                src: "/assets/kira/workflow-n8n.png",
+                width: 2400,
+                height: 448,
+                alt: "Flujo de trabajo del agente KIRA AI en n8n",
+                caption: "Flujo de trabajo del agente KIRA AI en n8n.",
+                sizes: "300px",
+                thumbClassName: "w-[240px] sm:w-[300px]",
+              },
+            ]}
+          />
         </Reveal>
       </Section>
 

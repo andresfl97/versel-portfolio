@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import Image from "next/image";
 import { MAILTO } from "@/lib/site";
 
 export function Container({
@@ -109,63 +108,5 @@ export function Button({
     <a href={href} className={classes} {...rest}>
       {children}
     </a>
-  );
-}
-
-/**
- * Evidencia real enmarcada con el sistema: un solo radio, hairline, sombra tenida.
- * Caption funcional debajo (fuera de la imagen), en t-caption AA.
- * width/height reales reservan la relacion (CLS). Nunca un <div> que finja UI.
- */
-export function EvidenceFigure({
-  src,
-  width,
-  height,
-  alt,
-  caption,
-  sizes = "100vw",
-  fit = "cover",
-  radius = "md",
-  priority = false,
-  unoptimized = false,
-  className = "",
-}: {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-  caption?: string;
-  sizes?: string;
-  fit?: "cover" | "contain";
-  radius?: "md" | "lg";
-  priority?: boolean;
-  unoptimized?: boolean;
-  className?: string;
-}) {
-  const radiusClass =
-    radius === "lg" ? "rounded-[var(--radius-lg)]" : "rounded-[var(--radius-md)]";
-  return (
-    <figure className={className}>
-      <div
-        className={`overflow-hidden border border-border bg-bg-elevated shadow-md ${radiusClass}`}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          sizes={sizes}
-          priority={priority}
-          unoptimized={unoptimized}
-          loading={priority ? "eager" : "lazy"}
-          className={`h-auto w-full ${
-            fit === "contain" ? "object-contain" : "object-cover"
-          }`}
-        />
-      </div>
-      {caption ? (
-        <figcaption className="t-caption text-ink-muted mt-2">{caption}</figcaption>
-      ) : null}
-    </figure>
   );
 }
