@@ -63,7 +63,7 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 | 4 | Dirección de diseño: editorial analítico. Dials VARIANCE 6 / MOTION 5 / DENSITY 5. |
 | 5 | Acento único: esmeralda `#0E7C66` (claro) / `#35C29B` (oscuro). |
 | 6 | Tipografía: Geist + Geist Mono (`tabular-nums`). |
-| 7 | **Tema: todo claro** en todas las páginas (modo oscuro disponible, sin usar por página). |
+| 7 | **Tema: oscuro único** (dark) en todo el sitio. Tipografía de contenido subida un paso (body 17px). |
 | 8 | Portafolio de una sola página: perfil, experiencia, stack, casos (ISP, GNSS, Retail), automatizaciones (KIRA), certificaciones y contacto. |
 
 ## Sistema de diseño (003)
@@ -89,13 +89,14 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 ## Activos (staged en `public/assets/`)
 
-- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg`, `kira/logo.jpg` (logo KIRA AI),
+- **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg` (re-coloreado a oscuro),
+  `kira/emblem.png` (emblema transparente, sin fondo; "KIRA AI" es texto HTML),
   `kira/workflow-n8n.png` (flujo n8n), `isp/informe-rendimiento.png`, `isp/desempeno-cuadrillas.png`.
 - **Difuminado aplicado (a pedido del humano):** en los dashboards de SONET se tapó la marca
   "LIVING net" y los nombres de contratistas (SONET, FINETIC, Hermano Miguel, Ricaurte,
   Totoracocha). Las métricas quedan visibles en la foto (no se mencionan en el texto).
-- **Presentación:** la evidencia se muestra como miniaturas que abren un lightbox; el logo KIRA
-  sigue siendo el elemento central de su sección.
+- **Presentación:** la evidencia se muestra como miniaturas que abren un lightbox. La sección
+  de KIRA usa el mismo formato y alineación que el resto del sitio.
 
 ## Restricciones
 
