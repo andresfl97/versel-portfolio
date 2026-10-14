@@ -10,6 +10,9 @@ export const SITE = {
 
 export const MAILTO = `mailto:${SITE.email}`;
 
+/** Repositorio del portafolio (detalles tecnicos). */
+export const REPO_URL = "https://github.com/andresfl97/versel-portfolio";
+
 /** Anclas de la pagina unica. Sin CTA en la barra. */
 export const NAV_LINKS = [
   { label: "Perfil", href: "/#perfil" },

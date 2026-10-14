@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import {
   Button,
   Figure,
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui";
 import { Stack } from "@/components/stack";
 import { Reveal } from "@/components/reveal";
-import { MAILTO, SITE } from "@/lib/site";
+import { MAILTO, REPO_URL, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${SITE.name} · Analista de Datos`,
@@ -225,6 +226,22 @@ export default function HomePage() {
           <div className="mt-8">
             <Stack />
           </div>
+          <p className="mt-6">
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="t-body-sm group inline-flex items-center gap-1.5 font-medium text-accent no-underline decoration-1 underline-offset-4 transition-colors duration-150 hover:text-accent-hover hover:underline focus-visible:underline"
+            >
+              Ver el código en GitHub
+              <ArrowUpRight
+                size={15}
+                weight="bold"
+                aria-hidden="true"
+                className="transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+          </p>
         </Reveal>
       </Section>
 
@@ -338,13 +355,16 @@ export default function HomePage() {
       <Section id="automatizaciones" bordered className="scroll-mt-20">
         <Reveal>
           <h2 className="t-h2">Automatizaciones</h2>
-          <div className="mt-6 max-w-[70ch]">
+        </Reveal>
+
+        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+          <Reveal className="lg:col-span-5">
             <div className="flex flex-wrap items-center gap-3">
               <h3 className="t-h3 text-ink">KIRA AI</h3>
               <StatusTag tone="neutral">Etapa 4 de 6</StatusTag>
               <StepDots current={4} total={6} />
             </div>
-            <p className="t-body-sm text-ink-muted mt-3">
+            <p className="t-body text-ink-muted mt-3 max-w-[46ch] text-pretty">
               Un agente de WhatsApp que convierte las conversaciones y
               operaciones de una microempresa en datos consultables.
             </p>
@@ -355,7 +375,41 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
+
+          <Reveal delay={0.08} className="lg:col-span-7">
+            <figure className="mx-auto w-full max-w-[400px] sm:max-w-[460px]">
+              <div className="relative aspect-square w-full overflow-hidden rounded-[var(--radius-lg)] border border-border bg-bg-elevated">
+                <Image
+                  src="/assets/kira/logo.jpg"
+                  alt="Logotipo de KIRA AI, agente de WhatsApp con IA"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  className="object-contain p-8"
+                />
+              </div>
+              <figcaption className="t-caption text-ink-muted mt-3">
+                Identidad visual de KIRA AI.
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <figure className="mt-8 w-full max-w-[760px]">
+            <div className="relative aspect-[5.4/1] w-full overflow-hidden rounded-[var(--radius-md)] border border-border bg-bg-elevated px-4 py-4 max-md:aspect-video">
+              <Image
+                src="/assets/kira/workflow-n8n.png"
+                alt="Flujo de trabajo del agente KIRA AI en n8n"
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-contain"
+              />
+            </div>
+            <figcaption className="t-caption text-ink-muted mt-3">
+              Flujo de trabajo del agente KIRA AI en n8n.
+            </figcaption>
+          </figure>
         </Reveal>
       </Section>
 
