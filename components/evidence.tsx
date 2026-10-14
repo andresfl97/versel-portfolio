@@ -13,6 +13,7 @@ export type EvidenceItem = {
   caption: string;
   sizes?: string;
   thumbClassName?: string;
+  unoptimized?: boolean;
 };
 
 /**
@@ -112,6 +113,7 @@ export function EvidenceGallery({
                   width={entry.width}
                   height={entry.height}
                   sizes={entry.sizes ?? "220px"}
+                  unoptimized={entry.unoptimized}
                   loading="lazy"
                   className="h-auto w-full object-cover transition-transform duration-220 group-hover:scale-[1.02]"
                 />
@@ -169,6 +171,7 @@ export function EvidenceGallery({
                 width={item.width}
                 height={item.height}
                 sizes="90vw"
+                unoptimized={item.unoptimized}
                 className="mx-auto block h-auto max-h-[80dvh] w-auto max-w-full rounded-[var(--radius-md)] object-contain shadow-md"
               />
               <p className="t-caption mt-3 max-w-[70ch] text-center text-ink">

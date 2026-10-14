@@ -331,7 +331,7 @@ export default function HomePage() {
 
           <Reveal>
             <CaseBlock
-              title="Retail Cuenca"
+              title="Retail Cuenca, asistido por orquestación de agentes de IA y auditoría humana"
               status="En desarrollo"
               chips={["Alimentos y bebidas", "comparación de precios y marcas"]}
               line="El proyecto está en pausa: su valor hoy es la orquestación del método."
@@ -355,20 +355,22 @@ export default function HomePage() {
                 },
               ]}
               image={
-                <div className="mt-5 max-w-[520px]">
-                  <Image
-                    src="/assets/retail/orquestacion-ia.svg"
-                    alt="Diagrama de orquestación con agentes de IA y Human Gates"
-                    width={1600}
-                    height={900}
-                    unoptimized
-                    className="h-auto w-full rounded-[var(--radius-md)] border border-border bg-bg-elevated object-contain"
-                  />
-                  <p className="t-caption text-ink-muted mt-2">
-                    Orquestación del método: agentes de IA y puntos de control
-                    humanos (Human Gates).
-                  </p>
-                </div>
+                <EvidenceGallery
+                  className="mt-5"
+                  items={[
+                    {
+                      src: "/assets/retail/flujo-etl.svg",
+                      width: 1600,
+                      height: 900,
+                      alt: "Diagrama del flujo ETL asistido por orquestación de agentes de IA con auditoría humana",
+                      caption:
+                        "Flujo de trabajo: ETL asistido por IA con auditoría humana.",
+                      sizes: "340px",
+                      thumbClassName: "w-[280px] sm:w-[340px]",
+                      unoptimized: true,
+                    },
+                  ]}
+                />
               }
             />
           </Reveal>

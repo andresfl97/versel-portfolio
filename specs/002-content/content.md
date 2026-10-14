@@ -124,7 +124,7 @@ Completo.
 
 ---
 
-## 3. Caso en desarrollo: Retail Cuenca
+## 3. Caso en desarrollo: Retail Cuenca, asistido por orquestación de agentes de IA y auditoría humana
 
 **Pregunta**
 
