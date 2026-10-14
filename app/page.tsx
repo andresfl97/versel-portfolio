@@ -42,7 +42,7 @@ const CERTS = [
 
 function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="t-figure-sm tnum inline-flex items-center rounded-[var(--radius-sm)] border border-border px-2.5 py-1 text-ink-muted">
+    <span className="t-figure-sm tnum inline-flex items-center rounded-[var(--radius-sm)] border border-border px-2.5 py-1 text-ink">
       {children}
     </span>
   );
@@ -52,7 +52,7 @@ function MetricLine({ values }: { values: readonly string[] }) {
   return (
     <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
       {values.map((value) => (
-        <li key={value} className="t-figure-sm tnum text-ink">
+        <li key={value} className="t-figure-sm tnum text-ink-muted">
           {value}
         </li>
       ))}
@@ -126,7 +126,7 @@ function StepDots({ current, total }: { current: number; total: number }) {
           className={`h-2 w-2 rounded-[var(--radius-pill)] border ${
             index < current
               ? "border-accent bg-accent"
-              : "border-border bg-transparent"
+              : "border-ink-subtle bg-transparent"
           }`}
         />
       ))}
@@ -158,7 +158,7 @@ export default function HomePage() {
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <a
                 href={MAILTO}
-                className="t-body-sm text-accent underline decoration-accent/30 underline-offset-4 transition-colors duration-150 hover:text-accent-hover"
+                className="t-body-sm t-link"
               >
                 {SITE.email}
               </a>
@@ -166,7 +166,7 @@ export default function HomePage() {
                 href={SITE.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="t-body-sm text-accent underline decoration-accent/30 underline-offset-4 transition-colors duration-150 hover:text-accent-hover"
+                className="t-body-sm t-link"
               >
                 {SITE.linkedin}
               </a>
@@ -232,14 +232,14 @@ export default function HomePage() {
               href={REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="t-body-sm group inline-flex items-center gap-1.5 font-medium text-accent no-underline decoration-1 underline-offset-4 transition-colors duration-150 hover:text-accent-hover hover:underline focus-visible:underline"
+              className="t-body-sm t-link group font-medium"
             >
-              Ver el código en GitHub
+              Ver el código en GitHub{" "}
               <ArrowUpRight
                 size={15}
                 weight="bold"
                 aria-hidden="true"
-                className="transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="inline-block align-[-0.125em] transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
             </a>
           </p>
@@ -462,7 +462,7 @@ export default function HomePage() {
           <div className="mt-5 grid grid-cols-1 gap-x-10 gap-y-2 sm:grid-cols-3">
             <a
               href={MAILTO}
-              className="t-body-sm text-accent underline decoration-accent/30 underline-offset-4 transition-colors duration-150 hover:text-accent-hover"
+              className="t-body-sm t-link"
             >
               {SITE.email}
             </a>
@@ -470,7 +470,7 @@ export default function HomePage() {
               href={SITE.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="t-body-sm text-accent underline decoration-accent/30 underline-offset-4 transition-colors duration-150 hover:text-accent-hover"
+              className="t-body-sm t-link"
             >
               {SITE.linkedin}
             </a>

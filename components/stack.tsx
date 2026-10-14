@@ -74,7 +74,7 @@ function BrandMark({ name, slug }: { name: string; slug: string }) {
       >
         <path d={path} fill="currentColor" />
       </svg>
-      <span className="t-body-sm text-ink">{name}</span>
+      <span className="t-body-sm text-ink-muted">{name}</span>
     </span>
   );
 }

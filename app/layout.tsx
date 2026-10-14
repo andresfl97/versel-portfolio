@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Tema unico oscuro (tokens.md).
+// Tema unico oscuro, paleta neutra (tokens.md 4.B).
 export const viewport: Viewport = {
-  themeColor: "#0F1413",
+  themeColor: "#000000",
   colorScheme: "dark",
 };
 

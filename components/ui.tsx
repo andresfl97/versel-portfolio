@@ -44,8 +44,8 @@ export function StatusTag({
     <span
       className={`t-label inline-flex items-center rounded-[var(--radius-pill)] border px-3 py-1 ${
         tone === "accent"
-          ? "border-accent/40 bg-accent-soft text-accent"
-          : "border-border bg-bg-elevated text-ink-muted"
+          ? "border-accent bg-accent text-accent-ink"
+          : "border-border bg-accent-soft text-ink"
       }`}
     >
       {children}
@@ -77,7 +77,7 @@ export function Figure({
     <div className={className}>
       <div
         className={`${sizeClass} tnum ${valueClassName} ${
-          accent ? "text-accent" : "text-ink"
+          accent ? "text-accent" : "text-ink-muted"
         }`}
       >
         {value}

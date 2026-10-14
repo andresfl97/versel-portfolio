@@ -20,7 +20,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-accent"
+                    className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-ink"
                   >
                     {item.label}
                   </a>
@@ -35,7 +35,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={MAILTO}
-                  className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-accent"
+                  className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-ink"
                 >
                   {SITE.email}
                 </a>
@@ -45,7 +45,7 @@ export function SiteFooter() {
                   href={SITE.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-accent"
+                  className="t-body-sm text-ink-muted transition-colors duration-150 hover:text-ink"
                 >
                   {SITE.linkedin}
                 </a>

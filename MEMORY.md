@@ -63,7 +63,7 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 | 4 | Dirección de diseño: editorial analítico. Dials VARIANCE 6 / MOTION 5 / DENSITY 5. |
 | 5 | Acento único: esmeralda `#0E7C66` (claro) / `#35C29B` (oscuro). |
 | 6 | Tipografía: Geist + Geist Mono (`tabular-nums`). |
-| 7 | **Tema: oscuro único** (dark) en todo el sitio. Tipografía de contenido subida un paso (body 17px). |
+| 7 | **Tema: oscuro único** (dark) en todo el sitio. **Paleta neutra monocroma**, sin acento con matiz: negro `#000000`, blanco `#FFFFFF`, grises `#B3B3B3`/`#737373`/`#262626`. Sin neón, glow ni gradientes de color. Tipografía de contenido un paso arriba (body 17px). |
 | 8 | Portafolio de una sola página: perfil, experiencia, stack, casos (ISP, GNSS, Retail), automatizaciones (KIRA), certificaciones y contacto. |
 
 ## Sistema de diseño (003)

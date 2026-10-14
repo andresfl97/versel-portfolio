@@ -120,78 +120,161 @@ tablas y ejes.
 
 ## 4. Paleta (tokens semánticos)
 
-Off-white y off-black puros, jamás `#ffffff` ni `#000000`. Papel con un matiz verde-neutro
-(armoniza con el acento, evita el family beige/crema de la skill, sección 4.2). Acento único:
-esmeralda `#0E7C66`, exacto en tema claro; en oscuro se eleva de luminosidad para conservar
-contraste manteniendo el mismo tono.
+**Escala neutra, monocroma, tema oscuro único.** La paleta son cinco colores en escala de grises,
+sin matiz, sin neón. El tema del sitio es **oscuro único**: se retira el par papel/tinta y el
+acento esmeralda. El acento perdió el color (ver 4.D).
 
-### 4.A Tema claro (papel / tinta)
+Desviación documentada (skill `design-taste-frontend` §8.B): la skill desaconseja `#000000` y
+`#FFFFFF` puros. Aquí se usan **por decisión humana explícita** y con justificación editorial: la
+profundidad no se construye tiñendo, se construye con el escalón de grises (`bg` → `surface` →
+`surface-2`), con el hairline `border` y con la jerarquía de peso tipográfico de 4.E. Es una
+desviación declarada y consciente, no un descuido.
 
-| Token | Hex | Rol |
+### 4.A Los cinco colores base (fijos)
+
+Son los únicos cinco valores del sitio. Cualquier otro hex es un fallo (ver 4.F).
+
+| Hex | Nombre | Rol base |
 |---|---|---|
-| `bg` | `#F4F5F2` | Fondo de página (papel) |
-| `bg-elevated` | `#FCFCFB` | Superficie elevada (raro; ver §7) |
-| `ink` | `#161A19` | Texto primario (tinta) |
-| `ink-muted` | `#5B6360` | Texto secundario |
-| `border` | `#DADCD6` | Hairlines, separadores |
-| `accent` | `#0E7C66` | Acento único (texto/enlace/figura) |
-| `accent-hover` | `#0C6E5A` | Estados hover |
-| `accent-active` | `#0A5C4B` | Estados active/pressed |
-| `accent-soft` | `#EAF4F0` | Tinte de fondo (badges, selección) |
-| `accent-ink` | `#F4F5F2` | Texto sobre relleno de acento |
-| `focus` | `#0E7C66` | Anillo de foco (offset = `bg`) |
+| `#000000` | Negro | Fondo, tinta sobre relleno claro |
+| `#FFFFFF` | Blanco | Texto primario, acento, realce máximo |
+| `#B3B3B3` | Gris claro | Texto secundario |
+| `#262626` | Gris carbón | Superficies, realce suave |
+| `#737373` | Gris medio | Terciario/meta, UI |
 
-### 4.B Tema oscuro (tinta / papel invertido, mismo tono)
+### 4.B Tokens semánticos (dark)
 
-| Token | Hex | Rol |
-|---|---|---|
-| `bg` | `#0F1413` | Fondo de página (off-black verdoso) |
-| `bg-elevated` | `#161B1A` | Superficie elevada |
-| `ink` | `#ECEEEA` | Texto primario |
-| `ink-muted` | `#9AA39F` | Texto secundario |
-| `border` | `#28302E` | Hairlines, separadores |
-| `accent` | `#35C29B` | Acento único (esmeralda elevado) |
-| `accent-hover` | `#4ED0AC` | Estados hover |
-| `accent-active` | `#5FD9B8` | Estados active/pressed |
-| `accent-soft` | `#122A24` | Tinte de fondo |
-| `accent-ink` | `#0B1512` | Texto sobre relleno de acento (tinta) |
-| `focus` | `#35C29B` | Anillo de foco (offset = `bg`) |
+| Token | Hex | Derivación | Rol |
+|---|---|---|---|
+| `bg` | `#000000` | base | Fondo de página |
+| `surface` | `#262626` | base | Tarjetas, paneles |
+| `surface-2` | `#333333` | blanco al 20% sobre negro | Superficie elevada: hover, panel anidado, chip activo |
+| `ink` | `#FFFFFF` | base | Texto primario |
+| `ink-muted` | `#B3B3B3` | base | Texto secundario, cuerpo de párrafo |
+| `ink-subtle` | `#737373` | base | Terciario/meta. **Solo texto grande y UI** (ver 4.C) |
+| `border` | `#404040` | blanco al 25% sobre negro | Hairline: bordes, divisores, inputs |
+| `border-strong` | `#737373` | = `ink-subtle` | Borde interactivo que exige 3:1 (UI) |
+| `accent` | `#FFFFFF` | base | **Sin matiz.** Enlaces, foco, cifra protagonista |
+| `accent-soft` | `#262626` | = `surface` | Realce neutro: chips, selección, cita |
+| `accent-ink` | `#000000` | base | Texto sobre relleno blanco (botón invertido) |
+| `focus` | `#FFFFFF` | = `accent` | Anillo de foco (offset = `bg`) |
 
-### 4.C Contraste verificado (WCAG)
+Justificación de los derivados (todos siguen siendo monocromos: R = G = B):
 
-Ratios calculados con la fórmula de luminancia relativa WCAG 2.1. AA normal = 4.5:1,
-AAA normal = 7:1.
+- `surface-2` sube un escalón **más claro** que `surface` (blanco al 20% sobre negro, `#333333`).
+  En tema oscuro la elevación se lee como más luz, así que la superficie activa o anidada es más
+  clara que la base. Mezcla de blanco con alfa dentro de la escala.
+- `border` es un escalón intermedio (`#404040`, blanco al 25% sobre negro). Se elige por encima de
+  `surface` para que el hairline sea perceptible tanto sobre `bg` como sobre `surface`. Es un
+  divisor decorativo, no un límite interactivo (ver 4.C).
+- `border-strong` reutiliza el valor de `ink-subtle` (`#737373`) porque es el escalón más bajo que
+  supera 3:1 sobre `surface` (3.19:1), que es lo que WCAG 1.4.11 pide a un borde de componente.
+- Todos los derivados salen de mezclar blanco con negro en alfa, o de reutilizar un gris ya dado.
+  Ninguno introduce canal de color.
 
-**Tema claro**
+### 4.C Contraste verificado (WCAG 2.1)
+
+Ratios con la fórmula de luminancia relativa. AA texto normal = 4.5:1, texto grande = 3:1,
+UI/gráficos = 3:1, AAA texto normal = 7:1.
 
 | Par | Ratio | Veredicto |
 |---|---|---|
-| `ink #161A19` sobre `bg #F4F5F2` | **16.0:1** | AAA (héroe y body) |
-| `ink-muted #5B6360` sobre `bg #F4F5F2` | **5.65:1** | AA (body) |
-| `accent #0E7C66` sobre `bg #F4F5F2` | **4.69:1** | AA (texto/enlace normal) |
-| `accent-ink #F4F5F2` sobre relleno `accent #0E7C66` | **4.69:1** | AA (texto de botón) |
-| `accent #0E7C66` sobre `accent-soft #EAF4F0` | **4.57:1** | AA |
+| `ink #FFFFFF` sobre `bg #000000` | **21.0:1** | AAA |
+| `ink #FFFFFF` sobre `surface #262626` | **15.13:1** | AAA |
+| `ink #FFFFFF` sobre `surface-2 #333333` | **12.63:1** | AAA |
+| `ink-muted #B3B3B3` sobre `bg #000000` | **10.02:1** | AAA |
+| `ink-muted #B3B3B3` sobre `surface #262626` | **7.22:1** | AAA |
+| `ink-muted #B3B3B3` sobre `surface-2 #333333` | **6.03:1** | AA+ |
+| `ink-subtle #737373` sobre `bg #000000` | **4.43:1** | AA solo texto grande (>=24px, o >=18.66px bold) |
+| `ink-subtle #737373` sobre `surface #262626` | **3.19:1** | UI / texto grande (3:1) |
+| `border #404040` sobre `bg #000000` | **2.03:1** | Divisor decorativo (no aplica 1.4.11) |
+| `border #404040` sobre `surface #262626` | **1.46:1** | Divisor decorativo |
+| `border-strong #737373` sobre `surface #262626` | **3.19:1** | UI (1.4.11, pasa 3:1) |
+| `accent #FFFFFF` sobre `bg #000000` | **21.0:1** | AAA (enlace/foco) |
+| `accent #FFFFFF` sobre `surface #262626` | **15.13:1** | AAA |
+| `accent-ink #000000` sobre relleno `accent #FFFFFF` | **21.0:1** | AAA (botón invertido) |
+| `ink #FFFFFF` sobre `accent-soft #262626` | **15.13:1** | AAA (chip/cita) |
 
-**Tema oscuro**
+No hay ningún par con matiz que reportar: ya no existe color con hue.
 
-| Par | Ratio | Veredicto |
-|---|---|---|
-| `ink #ECEEEA` sobre `bg #0F1413` | **15.9:1** | AAA (héroe y body) |
-| `ink-muted #9AA39F` sobre `bg #0F1413` | **7.18:1** | AAA (body) |
-| `accent #35C29B` sobre `bg #0F1413` | **8.27:1** | AAA (texto/enlace) |
-| `accent-ink #0B1512` sobre relleno `accent #35C29B` | **8.27:1** | AAA (texto de botón) |
-| `accent #35C29B` sobre `accent-soft #122A24` | **6.76:1** | AA+ |
+Reglas que se derivan:
 
-Regla de botón (Pre-Flight, skill §4.5): el texto del CTA siempre contrasta con su relleno.
-Claro = off-white sobre esmeralda 4.69:1. Oscuro = tinta sobre esmeralda elevado 8.27:1. Ningún
-par cae por debajo de AA.
+- **Corrección de `ink-subtle`.** `#737373` sobre `bg` da **4.43:1**, por debajo de AA para texto
+  normal (4.5:1). Se corrige **dentro de la escala**, sin meter color: `ink-subtle` queda
+  restringido a **texto grande** (>=24px, o >=18.66px bold) y a **UI no textual** (iconos, bordes,
+  estados inactivos), donde el umbral es 3:1 y sí pasa (4.43:1 sobre `bg`, 3.19:1 sobre `surface`).
+  Ningún texto pequeño (captions de 13px, metadatos) usa `ink-subtle`: esos van en `ink-muted`.
+  Si en el futuro se necesita `#737373` para texto pequeño, la alternativa monocroma permitida es
+  subir un escalón a `#757575` (4.56:1 sobre `bg`), que sigue siendo un gris neutro; queda a
+  criterio del humano porque se sale de los cinco hex fijados.
+- **`border` es un hairline decorativo**, no un límite interactivo: no pretende 3:1. Cuando el
+  borde separa un componente que el usuario necesita identificar (input, tarjeta interactiva,
+  control), se usa `border-strong` (`#737373`, 3.19:1 sobre `surface`) o `accent` (blanco) si el
+  límite debe ser fuerte.
+- **Botón.** El CTA de relleno invierte: fondo `accent` blanco, texto `accent-ink` negro, 21.0:1
+  AAA. El CTA fantasma (outline) usa `accent` blanco con `border-strong`, sobre `bg` o `surface`,
+  texto `ink` (>=15:1). Ningún par cae bajo AA.
+- **Foco.** Anillo `focus #FFFFFF` de 2px con offset 2px: 21.0:1 sobre `bg`. El foco nunca se marca
+  solo con un cambio de color de texto, siempre con el anillo.
 
-Regla de un solo acento (skill §4.2): `#0E7C66` es el único acento de la página. El esmeralda
-oscuro `#35C29B` no es un segundo acento: es el mismo tono a mayor luminosidad para el tema
-oscuro, como exige la fidelidad de marca en dark mode (skill §8.B). No hay badge teal, ni azul
-de estado, ni ningún color de señal fuera del acento y la neutralidad.
+### 4.D El acento perdió el matiz (cambio documentado)
 
-Sin gradientes morados, sin glows de neón, sin `#fff`/`#000`.
+Antes: acento único esmeralda (con matiz verde), hoy retirado. **Ese acento se retira por
+completo.** El color de acento ahora es **blanco puro `#FFFFFF`**, el extremo de máxima luz de la
+escala neutra y de máximo contraste (21:1 sobre `bg`, 15.13:1 sobre `surface`). El `accent-soft`
+pasa de tinte verde a **carbón `#262626`**: un realce neutro que se lee como superficie, no como
+color.
+
+Consecuencia: ya no hay un tono que "diferencie" por sí mismo. La jerarquía se resuelve por forma
+y por intensidad de blanco, no por hue (ver 4.E).
+
+### 4.E Jerarquía y realce sin color
+
+Como no hay matiz que distinga, todo se separa por tamaño, peso, tracking, caja y valor de blanco.
+Regla base: **cuanto más importante, más blanco y más grande; cuanto menos, más gris y más
+pequeño.** Nunca dos recursos de énfasis a la vez sobre el mismo elemento.
+
+| Elemento | Cómo se distingue |
+|---|---|
+| **Eyebrow / `label`** | Geist Mono 12px, `ink-muted #B3B3B3` (10:1), uppercase, `tracking 0.16em`. Se distingue por **forma** (mono + mayúsculas + tracking ancho), no por color. Máx. 1 por cada 3 secciones. Nunca en `ink-subtle` (12px no pasa AA). |
+| **Título de sección (`h2`-`h3`)** | `ink #FFFFFF`, peso 600, `tracking` negativo, tamaño grande. La jerarquía es **tamaño + peso**. |
+| **Cuerpo (`body`, `lead`)** | `ink-muted #B3B3B3` (10:1 sobre `bg`, 7.22:1 sobre `surface`). El cuerpo es gris; el blanco puro se reserva a lo que manda. |
+| **Meta / caption (13px)** | `ink-muted #B3B3B3`. **No** `ink-subtle` (13px es texto normal y `#737373` da 4.43:1, bajo AA). |
+| **Cifra protagonista** | `figure-lg` en `ink #FFFFFF` (ya no en un color de acento). Se distingue por **tamaño (32-48px) + mono**, no por tono. |
+| **Cifra de apoyo / eje** | Geist Mono `figure`/`figure-sm` en `ink-muted`. Menos blanca y más pequeña que la protagonista. |
+| **Enlace (`accent`)** | Texto `accent` blanco + **subrayado persistente** (`text-decoration: underline`, `text-underline-offset: 3px`, `text-decoration-thickness: 1px`, `text-decoration-color: #737373`). La affordance es el subrayado, no el color. |
+| **Hover de enlace** | El texto sigue blanco; el subrayado pasa a `#FFFFFF` y a 2px. Feedback = refuerzo del trazo, `150ms`. |
+| **Focus visible** | Anillo `focus #FFFFFF` 2px, `outline-offset: 2px`, `border-radius: var(--radius-sm)`. Nunca solo un cambio de color de texto. |
+| **Active / seleccionado** | **Inversión**: relleno `accent #FFFFFF`, texto `accent-ink #000000` (21:1). Es la señal más fuerte disponible sin hue. Alternativa de bajo peso: fondo `accent-soft #262626` + `border-strong`. |
+| **Nav / tab activo** | Texto `ink #FFFFFF` + `border-bottom: 1px` en `accent #FFFFFF`. Inactivo: `ink-subtle #737373` + borde transparente (el item inactivo es solo UI, cumple 3:1). |
+| **Chip / tag** | Fondo `accent-soft`, texto `ink`, `border` hairline; `radius-pill` solo si es etiqueta de estado. |
+| **Deshabilitado** | `ink-subtle #737373` (el estado inactivo está exento de contraste WCAG) y `cursor: not-allowed`, sin opacidad adicional. |
+| **Separador / divisoria** | `border` hairline (`#404040` de 1px) o `divide-y`. |
+
+Reglas duras de jerarquía:
+
+- El **blanco puro se gasta**: no se usa `#FFFFFF` en el cuerpo ni en metadatos. Si todo es blanco,
+  nada destaca. Cuerpo y meta en `ink-muted`; blanco para títulos, enlaces y cifra protagonista.
+- **Un solo recurso de énfasis por elemento** (tamaño, o peso, o inversión). No se acumulan.
+- **Cero énfasis por color.** Ningún realce teal, azul, rojo de error, etc. El estado de error vive
+  en el texto explícito más un icono o `border-strong`, nunca en un rojo fuera de la escala.
+
+### 4.F Reglas cero-IA (prohibiciones)
+
+- **Prohibido glow / box-shadow de color.** Ningún `box-shadow` con alfa de color, ningún
+  `text-shadow`, ningún resplandor detrás de botones o cifras. En oscuro la elevación se comunica
+  con `surface-2` + `border`, nunca con luz.
+- **Prohibido gradiente con matiz.** Ningún `linear-gradient`/`radial-gradient` entre dos tonos de
+  color. Si se necesita un degradado, es entre dos pasos de la escala neutra y solo como máscara
+  de imagen, jamás de fondo decorativo.
+- **Prohibido neón.** Ningún hex saturado. Cualquier valor fuera de los cinco base (o de sus
+  mezclas blanco/negro en alfa) es un fallo.
+- **Prohibido glassmorphism.** Nada de `backdrop-filter: blur` como lenguaje, ni paneles
+  translúcidos. Las superficies son opacas: `bg`, `surface`, `surface-2`.
+- **Prohibido tinte de color en sombras y bordes.** En oscuro no hay sombras y ningún borde lleva
+  matiz.
+- **Un solo acento, que ahora es blanco.** No reaparece ningún color de señal. El único extra es la
+  inversión blanco/negro.
 
 ---
 
@@ -261,22 +344,18 @@ redondeada en una página de botones pill, es un Pre-Flight Fail.
 
 ## 7. Sombras y superficies
 
-### 7.A Sombras (teñidas al fondo, sin negro puro)
+### 7.A Sombras: ninguna
 
-Claro (tinta `#161A19` con alfa muy baja, matiz verdoso):
-
-```css
---shadow-sm: 0 1px 2px rgba(18, 24, 22, 0.05);
---shadow-md: 0 2px 4px rgba(18, 24, 22, 0.05), 0 10px 28px rgba(18, 24, 22, 0.07);
-```
-
-Oscuro: la sombra sobre off-black es casi invisible. El tema oscuro **no usa sombras**: la
-elevación se comunica con `bg-elevated` + `border`. Tokens de sombra en oscuro = `none`.
+El tema es **oscuro único** y **no usa sombras**. Una sombra de color está prohibida (regla
+cero-IA, 4.F) y una sombra neutra sobre `#000000` es invisible de todos modos. La elevación se
+comunica **solo** con el escalón de superficie (`bg` → `surface` → `surface-2`) y con el hairline
+`border`. Tokens de sombra: `--shadow-sm: none; --shadow-md: none;` (declarados para que el código
+no rompa, con valor `none`).
 
 ### 7.B Cuándo usar tarjeta y cuándo no
 
 Regla editorial: **por defecto, no hay tarjeta.** Agrupar con `border-t`, `divide-y` espaciado o
-espacio negativo. Una tarjeta (superficie + borde + sombra) se usa **solo** cuando la elevación
+espacio negativo. Una tarjeta (superficie + borde) se usa **solo** cuando la elevación
 comunica jerarquía real: reutilización de un artefacto, un dato destacado que debe aislarse, una
 pieza interactiva con hover. Máximo una familia de tarjeta en todo el sitio.
 
@@ -361,51 +440,34 @@ Escala única y documentada (skill §6.F). Nada de `z-50` arbitrario; usar estos
 
 ## 10. Mapeo a Tailwind v4
 
-Bloque listo para `app/globals.css`. Tema dual por variable CSS con variante `dark:` de clase
-(`data-theme`), y tokens semánticos expuestos como utilidades (`bg-bg`, `text-ink`,
-`border-border`, `text-accent`).
+Bloque listo para `app/globals.css`. Tema **oscuro único**: se fija en `:root`, sin variante
+`dark:` y sin `data-theme` (no existe un segundo tema). Tokens semánticos expuestos como
+utilidades (`bg-bg`, `text-ink`, `border-border`, `text-accent`, ...).
 
 ```css
 @import "tailwindcss";
 
-/* Tema dual: un tema por página via atributo en el root. Nunca se invierte a mitad. */
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
-
+/* Tema oscuro único. Sin variante dark: y sin inversión por sección. */
 :root {
-  color-scheme: light;
-
-  --bg: #F4F5F2;
-  --bg-elevated: #FCFCFB;
-  --ink: #161A19;
-  --ink-muted: #5B6360;
-  --border: #DADCD6;
-  --accent: #0E7C66;
-  --accent-hover: #0C6E5A;
-  --accent-active: #0A5C4B;
-  --accent-soft: #EAF4F0;
-  --accent-ink: #F4F5F2;
-  --focus: #0E7C66;
-
-  --shadow-sm: 0 1px 2px rgba(18, 24, 22, 0.05);
-  --shadow-md: 0 2px 4px rgba(18, 24, 22, 0.05), 0 10px 28px rgba(18, 24, 22, 0.07);
-}
-
-[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #0F1413;
-  --bg-elevated: #161B1A;
-  --ink: #ECEEEA;
-  --ink-muted: #9AA39F;
-  --border: #28302E;
-  --accent: #35C29B;
-  --accent-hover: #4ED0AC;
-  --accent-active: #5FD9B8;
-  --accent-soft: #122A24;
-  --accent-ink: #0B1512;
-  --focus: #35C29B;
+  /* Escala neutra (monocroma: R = G = B en todos los valores) */
+  --bg: #000000;            /* negro */
+  --surface: #262626;       /* gris carbón (tarjetas/paneles) */
+  --surface-2: #333333;     /* blanco 20% sobre negro (elevada/hover) */
+  --ink: #FFFFFF;           /* blanco (texto primario, acento) */
+  --ink-muted: #B3B3B3;     /* gris claro (texto secundario) */
+  --ink-subtle: #737373;    /* gris medio (terciario/UI, solo texto grande) */
+  --border: #404040;        /* blanco 25% sobre negro (hairline) */
+  --border-strong: #737373; /* = ink-subtle (borde interactivo, 3:1) */
 
-  /* Oscuro sin sombras: la elevación es superficie + borde. */
+  /* Acento sin matiz */
+  --accent: #FFFFFF;
+  --accent-soft: #262626;   /* realce neutro (chip/selección), = surface */
+  --accent-ink: #000000;    /* texto sobre relleno blanco */
+  --focus: #FFFFFF;
+
+  /* Sin sombras: la elevación es superficie + borde. */
   --shadow-sm: none;
   --shadow-md: none;
 }
@@ -413,13 +475,14 @@ Bloque listo para `app/globals.css`. Tema dual por variable CSS con variante `da
 @theme inline {
   /* Color semántico */
   --color-bg: var(--bg);
-  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-active: var(--accent-active);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
   --color-focus: var(--focus);
@@ -435,10 +498,6 @@ Bloque listo para `app/globals.css`. Tema dual por variable CSS con variante `da
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-pill: 999px;
-
-  /* Sombras */
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
 
   /* Motion */
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
@@ -484,13 +543,10 @@ Bloque listo para `app/globals.css`. Tema dual por variable CSS con variante `da
 
 Notas de implementación:
 
-- `shadow-sm`/`shadow-md` en `@theme inline` referencian la MISMA variable con salto de tema
-  (`--shadow-sm: var(--shadow-sm)` no funciona por recursión; usar `--shadow-elevated-sm` como
-  nombre interno en `:root` y mapear `--shadow-sm: var(--shadow-elevated-sm)`). Se documenta aquí
-  para que `frontend-builder` no tropiece: **renombrar las dos variables de sombra internas**
-  (`--shadow-elevated-sm`, `--shadow-elevated-md`) antes de mapearlas.
-- Un tema por página: `portfolio-master`/`frontend-builder` fijan `data-theme` en `<html>` por
-  página. No hay toggle que invierta secciones a mitad de scroll (skill §4.11).
+- **Un solo tema.** `color-scheme: dark` en `:root`. No hay `data-theme`, no hay `dark:`, no hay
+  toggle. Ninguna sección invierte a claro (skill §4.11, Page Theme Lock).
+- Las variables de sombra se mantienen declaradas con `none` para no romper utilidades que las
+  referencien; no se usa ninguna sombra real.
 - `min-h-[100dvh]`, nunca `h-screen`.
 
 ---
@@ -502,7 +558,8 @@ Cómo se renderizan las cifras y micro-gráficas, y cómo se tratan las imágene
 ### 11.A Cifras
 
 - Toda cifra en **Geist Mono con `tabular-nums`** (`figure`, `figure-lg`, `figure-sm`, `code`).
-- Cifra protagonista de un caso: `figure-lg` en `text-accent`. El resto de cifras en `text-ink`.
+- Cifra protagonista de un caso: `figure-lg` en `text-ink` (blanco, ya no en un color de acento).
+  El resto de cifras en `text-ink-muted`. La jerarquía es tamaño + mono, no tono (4.E).
 - Significado y fuente de cada cifra salen de `content.md`: se maquetan como pareja
   cifra + glosa en `body-sm` + `caption` para la fuente. Nunca se inventa ni se redondea por
   estética (regla de honestidad de AGENTS.md).
@@ -512,14 +569,17 @@ Cómo se renderizan las cifras y micro-gráficas, y cómo se tratan las imágene
 ### 11.B Micro-gráficas (sparklines / small-multiples)
 
 - **SVG inline** con las cifras reales del `content-curator`, nunca barras decorativas.
-- Trazo en `stroke="var(--accent)"`, `stroke-width` 1.5-2, sin relleno de área salvo un tinte
-  `fill="var(--accent-soft)"` al 40-60% de opacidad como máximo.
+- Trazo en `stroke="var(--ink)"` (serie enfatizada) o `stroke="var(--ink-muted)"` (series
+  secundarias), `stroke-width` 1.5-2. Sin relleno de área con matiz: como máximo un velo neutro
+  `fill="rgba(255,255,255,0.06)"`. Nunca `accent-soft` como relleno de gráfica (es superficie, no
+  color).
 - **Prohibido**: barras de progreso con pista de fondo rellena (`bg-zinc-200` con relleno parcial
   encima). Es clutter de dashboard (skill §9.F). Si se compara "X de Y", usar número + icono o
   una micro-barra sin pista.
 - Ejes y etiquetas de eje en `figure-sm` (mono). Gridlines solo si organizan dato real, jamás de
   decoración.
-- El realce de una serie es por color de acento o por peso de trazo, no por relleno saturado.
+- El realce de una serie es por **peso de trazo y valor de gris** (blanco frente a gris claro), no
+  por color ni por relleno saturado.
 
 ### 11.C Imágenes reales (`next/image`)
 
@@ -559,17 +619,17 @@ Reglas:
 | Dials explícitos y razonados | Sí, sección 2 |
 | Sistema elegido o estética etiquetada con honestidad | Sí: Tailwind v4 + CSS vars, estética editorial declarada |
 | Cero em-dashes | Sí: regla dura aplicada a todo token/string |
-| Page Theme Lock (un tema por página) | Sí: `data-theme` por página, sin inversión a mitad |
-| Color Consistency Lock (un acento) | Sí: `#0E7C66`, con variante de luminosidad por tema |
+| Page Theme Lock (un tema por página) | Sí: tema **oscuro único** en `:root`; ninguna sección invierte |
+| Color Consistency Lock (un acento) | Sí: acento **sin matiz** (`#FFFFFF`) sobre escala neutra. Ya no hay color de acento con hue. |
 | Shape Consistency Lock (un sistema de radio) | Sí: sección 6 |
-| Button Contrast Check | Sí: 4.69:1 claro, 8.27:1 oscuro |
-| Form Contrast Check | Sí: tokens AA; inputs usan `border` + `ink` + `focus` |
+| Button Contrast Check | Sí: 21.0:1 (texto negro `accent-ink` sobre relleno blanco `accent`) |
+| Form Contrast Check | Sí: tokens AA; inputs usan `border`/`border-strong` + `ink` + `focus` |
 | Italic descender clearance | N/A (no hay itálicas en display en el sistema) |
 | Reduced motion | Sí: sección 8.D |
-| Dark mode tokens en ambos modos | Sí: sección 4 |
+| Dark mode tokens (tema oscuro único) | Sí: sección 4 |
 | Viewport stability `min-h-[100dvh]` | Sí: documentado, nunca `h-screen` |
 | Sin Inter por defecto / sin Fraunces / Instrument Serif | Sí: Geist / Geist Mono |
-| Cero glows neón / gradiente morado / negro puro | Sí: off-white y off-black |
+| Cero glows neón / gradiente morado / color con matiz | Sí: escala neutra; `#000000`/`#FFFFFF` puros por decisión humana documentada (4, intro) |
 | Long lists / barras con pista rellena | Sí: prohibido en artefactos de dato (§11.B) |
 | `tabular-nums` en cifras | Sí: sección 3.C |
 
@@ -584,9 +644,11 @@ del QA 006. Este archivo entrega el sistema que los hace cumplibles.
 1. **Geist Display como corte dedicado.** Hoy el rol Display usa Geist (una familia variable de
    `next/font/google`). Si el humano quiere el corte Display real, se cambia a `next/font/local`.
    Requiere aprobación.
-2. **Paleta de papel.** Se eligió un off-white de matiz verde-neutro (`#F4F5F2`) para evitar el
-   family beige/crema que la skill marca como tell. Si el humano prefiere un papel más cálido, se
-   ajusta y se reverifica contraste.
+2. **Paleta monocroma (cerrada por decisión humana).** Se retiró el papel off-white y el acento
+   esmeralda. El sitio es **oscuro único** con cinco colores neutros (`#000000`, `#FFFFFF`,
+   `#B3B3B3`, `#262626`, `#737373`); ver sección 4. Ya no queda la decisión de "papel más cálido"
+   ni de matiz de acento. Único punto abierto: si `ink-subtle` debe cubrir texto pequeño, subir a
+   `#757575` (ver 4.C).
 3. **`docs/ASSETS.md`.** Ya está sincronizado con `content.md` (lista `orquestacion-ia.svg`,
    declara el caso Retail sin capturas). No requiere acción; se deja constancia porque
    `content.md` traía una nota de sincronización desactualizada.
@@ -602,6 +664,6 @@ Estado de sincronización al cerrar esta tarea:
 ```text
 AGENTS.md:   NOT MODIFIED
 docs/:       NOT NEEDED
-specs/:      UPDATED (specs/003-design-system/tokens.md creado)
-MEMORY.md:   NOT MODIFIED (lo actualiza portfolio-master al cerrar HG 003)
+specs/:      UPDATED (specs/003-design-system/tokens.md: paleta redefinida a escala neutra, tema oscuro único)
+MEMORY.md:   NOT MODIFIED (lo actualiza portfolio-master)
 ```

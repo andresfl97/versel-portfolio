@@ -4,59 +4,55 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --bg: #f4f5f2;
-  --bg-elevated: #fcfcfb;
-  --ink: #161a19;
-  --ink-muted: #5b6360;
-  --border: #dadcd6;
-  --accent: #0e7c66;
-  --accent-hover: #0c6e5a;
-  --accent-active: #0a5c4b;
-  --accent-soft: #eaf4f0;
-  --accent-ink: #f4f5f2;
-  --focus: #0e7c66;
+  /* Paleta neutra monocroma, tema oscuro unico (tokens.md 4.B). */
+  --bg: #000000;
+  --surface: #262626;
+  --surface-2: #333333;
+  --ink: #ffffff;
+  --ink-muted: #b3b3b3;
+  --ink-subtle: #737373;
+  --border: #404040;
+  --border-strong: #737373;
+  --accent: #ffffff;
+  --accent-hover: #b3b3b3;
+  --accent-active: #737373;
+  --accent-soft: #262626;
+  --accent-ink: #000000;
+  --focus: #ffffff;
 
-  --shadow-elevated-sm: 0 1px 2px rgba(18, 24, 22, 0.05);
-  --shadow-elevated-md: 0 2px 4px rgba(18, 24, 22, 0.05),
-    0 10px 28px rgba(18, 24, 22, 0.07);
+  /* Alias retrocompatible: la superficie elevada es surface. */
+  --bg-elevated: #262626;
 
-  /* Scrim del lightbox: tintado oscuro, sin negro puro. */
-  --scrim: rgba(4, 8, 7, 0.82);
+  /* Sin sombras: en oscuro la elevacion es surface-2 + border (tokens.md 4.F). */
+  --shadow-elevated-sm: none;
+  --shadow-elevated-md: none;
+
+  /* Scrim del lightbox: negro neutro. */
+  --scrim: rgba(0, 0, 0, 0.8);
 
   /* Ritmo compacto de portafolio (008): py-8 movil, py-14 desktop. */
   --space-section: clamp(2rem, 5vw, 3.5rem);
 }
 
+/* Tema unico: los tokens viven en :root (tokens.md 4.B). */
 [data-theme="dark"] {
   color-scheme: dark;
-
-  --bg: #0f1413;
-  --bg-elevated: #161b1a;
-  --ink: #eceeea;
-  --ink-muted: #9aa39f;
-  --border: #28302e;
-  --accent: #35c29b;
-  --accent-hover: #4ed0ac;
-  --accent-active: #5fd9b8;
-  --accent-soft: #122a24;
-  --accent-ink: #0b1512;
-  --focus: #35c29b;
-
-  /* Tema oscuro unico: la elevacion suma una sombra tenida (no negro duro). */
-  --shadow-elevated-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-elevated-md: 0 2px 6px rgba(0, 0, 0, 0.45),
-    0 12px 32px rgba(0, 0, 0, 0.35);
 }
+
 
 @theme inline {
   /* Color semantico */
   --color-bg: var(--bg);
   --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-active: var(--accent-active);
@@ -253,6 +249,22 @@
     font-weight: 450;
     letter-spacing: 0;
     line-height: 1.6;
+  }
+
+  /* Enlace: blanco + subrayado persistente. La affordance es el trazo, no el color. */
+  .t-link {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-color: var(--ink-subtle);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition:
+      text-decoration-color 150ms var(--ease-standard),
+      text-decoration-thickness 150ms var(--ease-standard);
+  }
+  .t-link:hover {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
   }
 }
 

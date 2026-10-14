@@ -26,7 +26,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/#casos"
-            className="t-body-sm font-medium text-accent underline decoration-accent/30 underline-offset-4 transition-colors duration-150 hover:text-accent-hover"
+            className="t-body-sm t-link font-medium"
           >
             Ver los casos
           </Link>

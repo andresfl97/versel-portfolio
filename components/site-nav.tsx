@@ -7,7 +7,7 @@ import { NAV_LINKS, SITE } from "@/lib/site";
  */
 export function SiteNav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-bg">
       <div className="container-editorial flex h-16 items-center justify-between gap-4">
         <Link
           href="/#perfil"
@@ -24,7 +24,7 @@ export function SiteNav() {
             <Link
               key={link.href}
               href={link.href}
-              className="t-body-sm text-[13px] text-ink-muted transition-colors duration-150 hover:text-accent sm:text-[0.9375rem]"
+              className="t-body-sm text-[13px] text-ink-subtle transition-colors duration-150 hover:text-ink sm:text-[0.9375rem]"
             >
               {link.label}
             </Link>

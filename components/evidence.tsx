@@ -105,7 +105,7 @@ export function EvidenceGallery({
                   triggerRefs.current[index] = element;
                 }}
                 onClick={() => open(index)}
-                className="group block w-full overflow-hidden rounded-[var(--radius-md)] border border-border bg-bg-elevated shadow-md transition-transform duration-150 active:scale-[0.99]"
+                className="group block w-full overflow-hidden rounded-[var(--radius-md)] border border-border bg-surface transition-transform duration-150 active:scale-[0.99]"
               >
                 <Image
                   src={entry.src}
@@ -141,7 +141,7 @@ export function EvidenceGallery({
             transition={reduce ? { duration: 0 } : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
-              className="absolute inset-0 bg-scrim backdrop-blur-sm"
+              className="absolute inset-0 bg-scrim"
               onClick={close}
               aria-hidden="true"
             />
@@ -151,7 +151,7 @@ export function EvidenceGallery({
               ref={closeRef}
               onClick={close}
               aria-label="Cerrar vista ampliada"
-              className="absolute right-4 top-4 z-[2] inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-border bg-bg text-ink shadow-md transition-colors duration-150 hover:bg-accent-soft"
+              className="absolute right-4 top-4 z-[2] inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-border-strong bg-bg text-ink transition-colors duration-150 hover:bg-accent-soft"
             >
               <X size={20} weight="regular" aria-hidden="true" />
             </button>
@@ -172,9 +172,9 @@ export function EvidenceGallery({
                 height={item.height}
                 sizes="90vw"
                 unoptimized={item.unoptimized}
-                className="mx-auto block h-auto max-h-[80dvh] w-auto max-w-full rounded-[var(--radius-md)] object-contain shadow-md"
+                className="mx-auto block h-auto max-h-[80dvh] w-auto max-w-full rounded-[var(--radius-md)] object-contain"
               />
-              <p className="t-caption mt-3 max-w-[70ch] text-center text-ink">
+              <p className="t-caption mt-3 max-w-[70ch] text-center text-ink-muted">
                 {item.caption}
               </p>
             </motion.div>

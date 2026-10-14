@@ -86,9 +86,9 @@ specs/NNN-<slug>/
 
 Reglas duras de diseño (vienen de `design-taste-frontend`):
 
-- Cero em-dashes visibles. Cero gradiente morado IA. Cero tres cards iguales.
+- Cero em-dashes visibles. Cero gradiente morado IA. Cero neón, glow o sombras de color. Cero tres cards iguales.
 - Un solo tema por página (claro u oscuro, no se invierte a mitad).
-- Un solo acento (`#0E7C66`), un solo sistema de radio, un solo sistema de diseño.
+- **Paleta neutra monocroma** (decisión del autor): negro `#000000`, blanco `#FFFFFF`, gris claro `#B3B3B3`, gris medio `#737373`, gris carbón `#262626`. Sin acento con matiz (el acento es blanco), sin color fuera de esta escala. Un solo sistema de radio y un solo sistema de diseño.
 - Nada de "capturas falsas" hechas con `<div>`. Imágenes reales o artefactos de dato reales.
 - `min-h-[100dvh]`, nunca `h-screen`. `tabular-nums` en toda cifra.
 
