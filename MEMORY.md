@@ -4,7 +4,7 @@ Estado operativo compacto del proyecto VerselPortfolio. No es un log de activida
 
 ## Estado actual
 
-- **Fase:** COMPLETO. Sitio en producción.
+- **Fase:** COMPLETO. Sitio en producción (rediseño de una página).
 - **Método:** Spec-Driven Development con Human Gates.
 - **En vivo:** https://versel-portfolio-sigma.vercel.app
 - **Repositorio:** https://github.com/andresfl97/versel-portfolio (público, rama `main`).
@@ -21,14 +21,24 @@ HG 004 - Specs de página:                   APPROVED (tema: todo claro)
 HG 005 - Implementación:                    DONE (build + lint verde)
 HG 006 - QA:                                CORREGIDO (1 crítico + 9 avisos cerrados)
 HG 007 - Deploy en Vercel:                  LIVE (versel-portfolio-sigma.vercel.app)
+HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, CTA x2)
 ```
 
-## Verificación en vivo (2026-10-13)
+## Estructura del sitio (rediseño 008)
 
-- 6 rutas `200`; `/noexiste` `404`. Título y `theme-color` correctos (claro; oscuro en KIRA).
-- 1 `<h1>` por página; 0 `<img>` sin `alt`; 0 em-dashes en el HTML.
-- Assets crudos e imágenes optimizadas (`next/image`) responden `200`.
-- Favicon de marca (`app/icon.svg`) agregado y en vivo.
+- **Una sola página** `/` con secciones ancladas: `#perfil`, `#experiencia`, `#stack`,
+  `#casos` (ISP/SONET, GNSS RTK, Retail Cuenca), `#automatizaciones` (KIRA), `#certificaciones`,
+  `#contacto`. Se quitaron las rutas separadas (ahora 404).
+- **Stack tecnológico** con 18 iconos de marca (simple-icons + 3 trazos locales para SQL Server,
+  Power BI y Excel, retirados de v16). Reemplaza a Fundamentos SQL.
+- CTA "Escríbeme" solo 2 veces (perfil + contacto). Certificaciones: 6 (incluye Anthropic y
+  BIG school). Sin galerías de evidencia (imágenes feas retiradas; el usuario traerá mejores).
+
+## Verificación en vivo (rediseño 008)
+
+- `/` = `200`; rutas antiguas (`/casos/*`, `/sobre-mi`) = `404`; favicon `200`.
+- 7/7 secciones ancladas; 18 iconos de stack; 2 imágenes; 2 CTA "Escríbeme"; 0 em-dashes.
+- Ambas certificaciones nuevas presentes; título y `theme-color` correctos.
 
 ## Pendiente / opcional (no bloquea)
 
@@ -54,12 +64,7 @@ HG 007 - Deploy en Vercel:                  LIVE (versel-portfolio-sigma.vercel.
 | 5 | Acento único: esmeralda `#0E7C66` (claro) / `#35C29B` (oscuro). |
 | 6 | Tipografía: Geist + Geist Mono (`tabular-nums`). |
 | 7 | **Tema: todo claro** en todas las páginas (modo oscuro disponible, sin usar por página). |
-| 8 | Contenido: 3 casos (ISP/SONET, GNSS RTK, Retail Cuenca en desarrollo), Fundamentos SQL, Automatizaciones (KIRA AI), Sobre mí. |
-
-## Piezas y rutas
-
-- `/` Home (índice curado) · `/casos/isp` · `/casos/gnss-rtk` · `/casos/retail-cuenca`
-- `/automatizaciones/kira` · `/sobre-mi`
+| 8 | Portafolio de una sola página: perfil, experiencia, stack, casos (ISP, GNSS, Retail), automatizaciones (KIRA), certificaciones y contacto. |
 
 ## Sistema de diseño (003)
 
@@ -68,10 +73,10 @@ HG 007 - Deploy en Vercel:                  LIVE (versel-portfolio-sigma.vercel.
 - Contraste verificado: light ink/bg 16.05 AAA, accent/bg 4.69 AA; dark accent/bg 8.27 AAA.
 - Papel off-white verde-neutro `#F4F5F2` (evita el family beige/crema de "tell" de IA).
 
-## Contenido (002) — v3
+## Contenido (002)
 
-- `specs/002-content/content.md` (v3): Home, caso ISP/SONET, Retail (en desarrollo), Fundamentos
-  SQL, KIRA AI, GNSS RTK y Sobre mí/Contacto.
+- `specs/002-content/content.md`: perfil, caso ISP/SONET, Retail (en desarrollo), Stack
+  tecnológico, KIRA AI, GNSS RTK y contacto.
 - Sin "sesgo de captura" (solo métricas fuertes del CV); negocio generalizado a "una microempresa";
   sin periodo en el caso ISP.
 
@@ -84,11 +89,10 @@ HG 007 - Deploy en Vercel:                  LIVE (versel-portfolio-sigma.vercel.
 
 ## Activos (staged en `public/assets/`)
 
-- Home: `home/portrait.jpg` (foto profesional; 413x532).
-- ISP/SONET: `isp/pipeline.png`, `isp/informe-general.png`, `isp/encuesta.png`
-  (`isp/contratistas.png` opcional).
-- KIRA AI: `kira/workflow-n8n.png`, `kira/chatbot-flujo.png`, `kira/kira-ai.png`.
-- Retail: `retail/orquestacion-ia.svg`.
+- **En uso:** `home/portrait.jpg` (foto de perfil) y `retail/orquestacion-ia.svg`.
+- **Guardados sin usar** (el usuario traerá imágenes mejores, las actuales se ven feas):
+  `isp/pipeline.png`, `isp/informe-general.png`, `isp/encuesta.png`,
+  `kira/workflow-n8n.png`, `kira/chatbot-flujo.png`, `kira/kira-ai.png`.
 
 ## Restricciones
 
