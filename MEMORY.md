@@ -91,11 +91,11 @@ HG 008 - Rediseño una página:               LIVE (compacto, stack con iconos, 
 
 - **En uso:** `home/portrait.jpg`, `retail/orquestacion-ia.svg`, `kira/logo.jpg` (logo KIRA AI),
   `kira/workflow-n8n.png` (flujo n8n), `isp/informe-rendimiento.png`, `isp/desempeno-cuadrillas.png`.
-- **PENDIENTE DE REVISIÓN HUMANA (publicado a su pedido):** los dos dashboards de SONET exponen:
-  - la marca **"LIVING net"** (arriba a la derecha);
-  - nombres reales de contratistas (SONET, FINETIC, Hermano Miguel, Ricaurte, Totoracocha);
-  - la métrica **"inactividad (no saben / no usan) 90.74% / 87.04%"**, que el humano pidió retirar.
-  Opciones ofrecidas: difuminar esos elementos o cambiar las imágenes.
+- **Difuminado aplicado (a pedido del humano):** en los dashboards de SONET se tapó la marca
+  "LIVING net" y los nombres de contratistas (SONET, FINETIC, Hermano Miguel, Ricaurte,
+  Totoracocha). Las métricas quedan visibles en la foto (no se mencionan en el texto).
+- **Presentación:** la evidencia se muestra como miniaturas que abren un lightbox; el logo KIRA
+  sigue siendo el elemento central de su sección.
 
 ## Restricciones
 
