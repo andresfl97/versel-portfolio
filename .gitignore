@@ -1,0 +1,32 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Build / framework
+.next/
+out/
+build/
+dist/
+.vercel
+
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/*
+!.vscode/extensions.json
+
+# opencode local
+.opencode/node_modules/
+.opencode/package-lock.json
+.opencode/package.json
+
+# Secretos (nunca versionar)
+.secrets/
+*.token

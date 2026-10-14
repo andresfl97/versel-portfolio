@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* Tema dual: un tema por pagina via atributo en el root. Nunca se invierte a mitad. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: light;
+
+  --bg: #f4f5f2;
+  --bg-elevated: #fcfcfb;
+  --ink: #161a19;
+  --ink-muted: #5b6360;
+  --border: #dadcd6;
+  --accent: #0e7c66;
+  --accent-hover: #0c6e5a;
+  --accent-active: #0a5c4b;
+  --accent-soft: #eaf4f0;
+  --accent-ink: #f4f5f2;
+  --focus: #0e7c66;
+
+  --shadow-elevated-sm: 0 1px 2px rgba(18, 24, 22, 0.05);
+  --shadow-elevated-md: 0 2px 4px rgba(18, 24, 22, 0.05),
+    0 10px 28px rgba(18, 24, 22, 0.07);
+
+  --space-section: clamp(5rem, 10vw, 8rem);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f1413;
+  --bg-elevated: #161b1a;
+  --ink: #eceeea;
+  --ink-muted: #9aa39f;
+  --border: #28302e;
+  --accent: #35c29b;
+  --accent-hover: #4ed0ac;
+  --accent-active: #5fd9b8;
+  --accent-soft: #122a24;
+  --accent-ink: #0b1512;
+  --focus: #35c29b;
+
+  /* Oscuro sin sombras: la elevacion es superficie + borde. */
+  --shadow-elevated-sm: none;
+  --shadow-elevated-md: none;
+}
+
+@theme inline {
+  /* Color semantico */
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-focus: var(--focus);
+
+  /* Tipografia */
+  --font-display: var(--font-geist);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+
+  /* Radios */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-sm: var(--shadow-elevated-sm);
+  --shadow-md: var(--shadow-elevated-md);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --default-transition-duration: 220ms;
+  --default-transition-timing-function: var(--ease-standard);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  a,
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+@layer components {
+  /* Contenedor editorial */
+  .container-editorial {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1400px;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-editorial {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-editorial {
+      padding-inline: 3rem;
+    }
+  }
+
+  /* Ritmo vertical de seccion */
+  .section-y {
+    padding-block: var(--space-section);
+  }
+
+  /* Cifras: ancho mono estable, siempre */
+  .tnum {
+    font-variant-numeric: tabular-nums slashed-zero;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+
+  /* Escala tipografica (tokens.md 3.B) */
+  .t-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  .t-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .t-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+  .t-h3 {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  .t-h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.35;
+  }
+  .t-lead {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6;
+  }
+  .t-body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.65;
+  }
+  .t-body-sm {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6;
+  }
+  .t-caption {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
+  }
+  .t-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  .t-figure-lg {
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 450;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .t-figure {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+  }
+  .t-figure-sm {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+  .t-code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 450;
+    letter-spacing: 0;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
