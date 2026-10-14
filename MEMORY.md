@@ -4,9 +4,11 @@ Estado operativo compacto del proyecto VerselPortfolio. No es un log de activida
 
 ## Estado actual
 
-- **Fase:** 007-deploy (QA corregido y verificado; esperando OK para publicar).
+- **Fase:** 007-deploy (repo publicado; falta conectar Vercel).
 - **Método:** Spec-Driven Development con Human Gates.
 - **App construida:** Next.js 16.4 (Turbopack), 7 rutas + 404, `build` y `lint` en verde.
+- **Repositorio:** https://github.com/andresfl97/versel-portfolio (público, rama `main`).
+  Autor de commits: noreply de GitHub (el email real está privado en su cuenta).
 
 ## Gates humanos
 
