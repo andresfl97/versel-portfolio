@@ -9,6 +9,7 @@ import {
   Section,
   StatusTag,
 } from "@/components/ui";
+import { EvidenceGallery } from "@/components/evidence";
 import { Stack } from "@/components/stack";
 import { Reveal } from "@/components/reveal";
 import { MAILTO, REPO_URL, SITE } from "@/lib/site";
@@ -277,24 +278,27 @@ export default function HomePage() {
                 },
               ]}
               image={
-                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-                  <EvidenceFigure
-                    src="/assets/isp/informe-rendimiento.png"
-                    width={1800}
-                    height={1351}
-                    alt="Dashboard del Informe de Rendimiento SONET con CSAT, tiempo de espera y valoración del trato"
-                    sizes="(max-width: 768px) 100vw, 42vw"
-                    caption="Informe de Rendimiento SONET: satisfacción del usuario y tiempos de atención."
-                  />
-                  <EvidenceFigure
-                    src="/assets/isp/desempeno-cuadrillas.png"
-                    width={1800}
-                    height={1351}
-                    alt="Dashboard del Análisis de desempeño de cuadrillas"
-                    sizes="(max-width: 768px) 100vw, 42vw"
-                    caption="Análisis de desempeño de cuadrillas: métricas operativas por equipo."
-                  />
-                </div>
+                <EvidenceGallery
+                  className="mt-5"
+                  items={[
+                    {
+                      src: "/assets/isp/informe-rendimiento.png",
+                      width: 1800,
+                      height: 1351,
+                      alt: "Dashboard del Informe de Rendimiento SONET con CSAT, tiempo de espera y valoración del trato",
+                      caption: "Informe de Rendimiento SONET.",
+                      sizes: "220px",
+                    },
+                    {
+                      src: "/assets/isp/desempeno-cuadrillas.png",
+                      width: 1800,
+                      height: 1351,
+                      alt: "Dashboard del Análisis de desempeño de cuadrillas",
+                      caption: "Análisis de desempeño de cuadrillas.",
+                      sizes: "220px",
+                    },
+                  ]}
+                />
               }
             />
           </Reveal>
@@ -413,15 +417,21 @@ export default function HomePage() {
         </div>
 
         <Reveal>
-          <EvidenceFigure
-            src="/assets/kira/workflow-n8n.png"
-            width={2400}
-            height={448}
-            alt="Flujo de trabajo del agente KIRA AI en n8n"
-            sizes="(max-width: 768px) 100vw, 54vw"
-            className="mx-auto mt-8 w-full max-w-[760px]"
-            caption="Flujo de trabajo del agente KIRA AI en n8n."
-          />
+          <div className="mt-8 flex justify-center">
+            <EvidenceGallery
+              items={[
+                {
+                  src: "/assets/kira/workflow-n8n.png",
+                  width: 2400,
+                  height: 448,
+                  alt: "Flujo de trabajo del agente KIRA AI en n8n",
+                  caption: "Flujo de trabajo del agente KIRA AI en n8n.",
+                  sizes: "300px",
+                  thumbClassName: "w-[240px] sm:w-[300px]",
+                },
+              ]}
+            />
+          </div>
         </Reveal>
       </Section>
 
